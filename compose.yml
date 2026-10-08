@@ -1,14 +1,14 @@
 
 services:
   devopsdb:
-    image: shaikmustafa/flm-oct:db
+    image: starwhat/project:db
     ports:
       - "3306:3306"
     networks:
       - mynetwork
 
   application:
-    image: shaikmustafa/flm-oct:javaapp
+    image: starwhat/project:javaapp
     ports:
       - "1114:8080"
     depends_on:
@@ -18,5 +18,5 @@ services:
 
 networks:
   mynetwork:
-    driver: bridge
+    driver: overlay
 
